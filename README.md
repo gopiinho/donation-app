@@ -8,5 +8,7 @@ Comes with a deploy and a run script.
 # Try running some of the following tasks:
 
 yarn install
+
 yarn hardhat run scripts.run.js
+
 yarn hardhat run scripts/deploy.js
