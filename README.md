@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Simple Ethereum Donation app.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This contract let's users donate to the deployer (owner) with a custom message and users name. All donations are tracked and the data is stored in an array.
+Uses hardhat and ethers.js
 
-Try running some of the following tasks:
+Comes with a deploy and a run script.
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+# Try running some of the following tasks:
+
+yarn hardhat run scripts.run.js
+yarn hardhat run scripts/deploy.js
