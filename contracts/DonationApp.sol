@@ -2,8 +2,6 @@
 
 pragma solidity ^0.8.7;
 
-import "hardhat/console.sol";
-
 contract DonationApp {
     // Tracking total donations.
     uint256 totalDonations;
@@ -41,7 +39,6 @@ contract DonationApp {
 
     // Function returns total number of donations made
     function getTotalDonations() public view returns (uint256) {
-        console.log("We have total %d donations received", totalDonations);
         return totalDonations;
     }
 

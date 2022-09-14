@@ -15,11 +15,4 @@ async function connect() {
         connectButton.innerHTML = "Install Metamask"
     }
 }
-async function donate(ethAmount) {
-    console.log(`Funding with amount ${ethAmount}`)
-    if (typeof window.ethereum !== "undefined") {
-        const provider = new ethers.providers.Web3Provider(window.ethereum)
-        const signer = provider.getSigner()
-        console.log(signer)
-    }
-}
+async function donate() {}
