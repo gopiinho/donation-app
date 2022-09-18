@@ -44,13 +44,12 @@ contract DonationApp {
 
     // Creates a function that takes paras and lets users donate
 
-    function doDonation(
-        string memory _name,
-        string memory _message,
-        uint256 _ethAmount
-    ) public payable {
+    function doDonation(string memory _name, string memory _message)
+        public
+        payable
+    {
         uint256 amount = 0.002 ether;
-        require(_ethAmount <= amount, "Not enough ETH");
+        require(msg.value >= amount, "Not enough ETH");
 
         totalDonations += 1;
 
@@ -58,7 +57,7 @@ contract DonationApp {
         donation.push(Donation(msg.sender, _name, _message, block.timestamp));
 
         // sending eth
-        (bool success, ) = owner.call{value: _ethAmount}("");
+        (bool success, ) = owner.call{value: msg.value}("");
         require(success, "Donation Failed");
 
         emit newDonation(msg.sender, block.timestamp, _message, _name);
