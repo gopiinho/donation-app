@@ -17,7 +17,8 @@ async function connect() {
 }
 
 async function donate() {
-    let ethAmount = document.getElementById("value").value
+    //let ethAmount = document.getElementById("value").value
+    //const options = { value: ethers.utils.parseEther("0.002") }
 
     const donationAppContract = "0xffaA373d3863165190Ae70C8aE495058F0c41b7B" // Input contract address here.
 
@@ -25,6 +26,8 @@ async function donate() {
 
     const txResponse = await appContract
         .connect(signer)
-        .doDonation("Gurpreet", "Testing", parseInt(ethAmount))
+        .doDonation("Name here", "Testing", {
+            value: 20000000,
+        })
     await txResponse.wait()
 }
