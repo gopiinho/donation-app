@@ -16,6 +16,7 @@ async function connect() {
     connectButton.innerHTML = "Connected"
 }
 
+// This lets you send 0.002 eth to smart contract.
 async function donate() {
     //let ethAmount = document.getElementById("value").value
     //const options = { value: ethers.utils.parseEther("0.002") }
@@ -26,8 +27,8 @@ async function donate() {
 
     const txResponse = await appContract
         .connect(signer)
-        .doDonation("Name here", "Testing", {
-            value: 20000000,
+        .doDonation("Name here", "Testing", 2000000000000000, {
+            value: 2000000000000000,
         })
     await txResponse.wait()
 }
